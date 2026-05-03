@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Safarov Azizbek | O'zbek Jang San'ati Ustazi</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    :root {
+      --bg-primary: #f5f5f5;
+      --bg-card: #ffffff;
+      --text-primary: #1a1a1a;
+      --text-secondary: #555555;
+      --accent: #e63946;
+      --accent-hover: #c1121f;
+      --border: #e0e0e0;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    body.dark {
+      --bg-primary: #0a0a0a;
+      --bg-card: #1a1a1a;
+      --text-primary: #f5f5f5;
+      --text-secondary: #b0b0b0;
+      --border: #2a2a2a;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    body {
+      background: var(--bg-primary);
+      color: var(--text-primary);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* Theme toggle */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 10px 18px;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.05);
+    }
+
+    /* Animatsiyalar */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate {
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.35s; }
+    .delay-4 { animation-delay: 0.5s; }
+    .delay-5 { animation-delay: 0.65s; }
+
+    /* Profile card */
+    .profile-card {
+      background: var(--bg-card);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .profile-inner {
+      padding: 2.5rem;
+    }
+
+    /* Image */
+    .image-section {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--accent);
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.05);
+    }
+
+    .name {
+      font-size: 2rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .title {
+      text-align: center;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .short-bio {
+      text-align: center;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+
+    /* Link tugmalar - KATTA VA CHIROYLI */
+    .link-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 32px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 18px rgba(230, 57, 70, 0.35);
+    }
+
+    .btn-link i {
+      font-size: 1.4rem;
+    }
+
+    .btn-link:hover {
+      transform: translateY(-4px);
+      background: var(--accent-hover);
+      box-shadow: 0 12px 28px rgba(230, 57, 70, 0.5);
+    }
+
+    .btn-link:active {
+      transform: scale(0.96);
+    }
+
+    /* Instagram uchun alohida */
+    .btn-insta {
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      border-left: 4px solid var(--accent);
+      padding-left: 14px;
+    }
+
+    .about-text {
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill-item {
+      background: var(--bg-primary);
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+
+    .skill-item:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* Contact */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 1rem;
+    }
+
+    .contact-item i {
+      width: 32px;
+      color: var(--accent);
+      font-size: 1.3rem;
+    }
+
+    /* XABAR YOZISh FORMASI */
+    .message-form {
+      background: var(--bg-primary);
+      padding: 1.5rem;
+      border-radius: 24px;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 1rem;
+      transition: all 0.2s;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.2);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .btn-submit {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      width: 100%;
+    }
+
+    .btn-submit:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-submit:active {
+      transform: scale(0.97);
+    }
+
+    .form-status {
+      margin-top: 1rem;
+      padding: 10px;
+      border-radius: 12px;
+      text-align: center;
+      display: none;
+    }
+
+    .form-status.success {
+      background: #2e7d32;
+      color: white;
+      display: block;
+    }
+
+    .form-status.error {
+      background: #c62828;
+      color: white;
+      display: block;
+    }
+
+    hr {
+      margin: 1.5rem 0;
+      border-color: var(--border);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .profile-inner {
+        padding: 1.5rem;
+      }
+      .name {
+        font-size: 1.6rem;
+      }
+      .profile-img {
+        width: 140px;
+        height: 140px;
+      }
+      .btn-link {
+        padding: 10px 22px;
+        font-size: 0.95rem;
+      }
+      .section-title {
+        font-size: 1.4rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .link-buttons {
+        flex-direction: column;
+      }
+      .btn-link {
+        justify-content: center;
+      }
+      .container {
+        padding: 1rem;
+      }
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+<button class="theme-toggle" id="themeToggle">
+  <i class="fas fa-moon"></i> <span id="themeText">Dark</span>
+</button>
+
+<div class="container">
+  <div class="profile-card">
+    <div class="profile-inner">
+      
+      <!-- Rasm -->
+      <div class="image-section animate">
+        <img src="" alt="Safarov Azizbek" id="profileImage" class="profile-img">
+      </div>
+      
+      <h1 class="name animate delay-1">Safarov Azizbek Ilkhamovich</h1>
+      <div class="title animate delay-2">🏆 O'zbek Jang San'ati Ustazi | Murabbiy</div>
+      <div class="short-bio animate delay-3">
+        <i class="fas fa-quote-left"></i> Sport — bu intizomning eng yuqori darajasi <i class="fas fa-quote-right"></i>
+      </div>
+      
+      <!-- TUGMALAR - KATTA VA CHIROYLI -->
+      <div class="link-buttons animate delay-4">
+        <a href="https://t.me/azz_official_7" target="_blank" class="btn-link">
+          <i class="fab fa-telegram"></i> Telegram / @azz_official_7
+        </a>
+        <a href="https://www.instagram.com/movlonov_team" target="_blank" class="btn-link btn-insta">
+          <i class="fab fa-instagram"></i> Instagram / @movlonov_team
+        </a>
+      </div>
+      
+      <!-- About me -->
+      <div class="section animate delay-5">
+        <h2 class="section-title">📖 About me</h2>
+        <p class="about-text">
+          Men Safarov Azizbek Ilkhamovich — O‘zbek jang san’ati bo‘yicha ustoz va murabbiy. 
+          Ko‘p yillik tajribam davomida yoshlarni nafaqat jismoniy, balki ma’naviy tarbiyalashga harakat qilaman.
+          Jang san’ati — bu faqat kurash emas, bu hayot falsafasi, sabr va intizom.
+        </p>
+      </div>
+      
+      <!-- Skills -->
+      <div class="section">
+        <h2 class="section-title">⚡ Skills</h2>
+        <div class="skills-list">
+          <span class="skill-item">O‘zbek jang san’ati</span>
+          <span class="skill-item">Intizom tarbiyasi</span>
+          <span class="skill-item">Shaxsiy himoya</span>
+          <span class="skill-item">Motivatsiya coaching</span>
+          <span class="skill-item">Musobaqa tayyorlash</span>
+        </div>
+      </div>
+      
+      <!-- Contact -->
+      <div class="section">
+        <h2 class="section-title">📞 Contact</h2>
+        <div class="contact-info">
+          <div class="contact-item"><i class="fas fa-phone-alt"></i> +998 99 924 77 79</div>
+          <div class="contact-item"><i class="fab fa-telegram"></i> @azz_official_7</div>
+          <div class="contact-item"><i class="fab fa-instagram"></i> @movlonov_team</div>
+        </div>
+      </div>
+      
+      <!-- Mijozlar xabar yozadigan bo'lim -->
+      <div class="section">
+        <h2 class="section-title">✉️ Xabar qoldiring</h2>
+        <div class="message-form">
+          <form id="contactForm">
+            <div class="form-group">
+              <label>Ismingiz</label>
+              <input type="text" id="userName" placeholder="Masalan: Jahongir" required>
+            </div>
+            <div class="form-group">
+              <label>Telefon raqamingiz</label>
+              <input type="tel" id="userPhone" placeholder="+998 99 123 45 67" required>
+            </div>
+            <div class="form-group">
+              <label>Xabaringiz</label>
+              <textarea id="userMessage" placeholder="Savol yoki taklifingizni yozing..." required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">
+              <i class="fab fa-telegram"></i> Xabarni yuborish
+            </button>
+            <div id="formStatus" class="form-status"></div>
+          </form>
+          <p style="font-size: 0.75rem; margin-top: 1rem; text-align: center; color: var(--text-secondary);">
+            <i class="fas fa-lock"></i> Xabaringiz sizga Telegram orqali yetadi
+          </p>
+        </div>
+      </div>
+      
+      <hr>
+      <div style="text-align: center; font-size: 0.85rem; color: var(--text-secondary);">
+        <i class="fas fa-fist-raised"></i> Intizom · Kuch · Ruh
+      </div>
+      
+    </div>
+  </div>
+  <footer>
+    © 2026 Safarov Azizbek Ilkhamovich — O‘zbek jang san’ati ustasi
+  </footer>
+</div>
+
+<script>
+  // Dark/Light mode
+  const themeToggle = document.getElementById('themeToggle');
+  const themeText = document.getElementById('themeText');
+  const icon = themeToggle.querySelector('i');
+  
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    if (document.body.classList.contains('dark')) {
+      themeText.textContent = 'Light';
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+    } else {
+      themeText.textContent = 'Dark';
+      icon.classList.remove('fa-sun');
+      icon.classList.add('fa-moon');
+    }
+  });
+  
+  // Rasmni joylash
+  const profileImg = document.getElementById('profileImage');
+  profileImg.src = "ustoz.jpg";
+  profileImg.onerror = function() {
+    profileImg.src = "https://placehold.co/180x180/333/e63946?text=Ustoz+Rasmi";
+  };
+  
+  // TELEGRAMGA XABAR YUBORISH
+  // SIZNING BOT TOKENI VA CHAT ID INGIZNI SHU YERGA YOZING
+  const BOT_TOKEN = "8563774710:AAHh8p8vipiNHMewRMWfoW3ZfZgKvSqqKns";     // <-- BotFather dan olasiz
+  const CHAT_ID = "1950309722";         // <-- @userinfobot dan olasiz
+  
+  const form = document.getElementById('contactForm');
+  const statusDiv = document.getElementById('formStatus');
+  
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const name = document.getElementById('userName').value.trim();
+    const phone = document.getElementById('userPhone').value.trim();
+    const message = document.getElementById('userMessage').value.trim();
+    
+    if (!name || !phone || !message) {
+      statusDiv.textContent = "Iltimos, barcha maydonlarni to‘ldiring!";
+      statusDiv.className = "form-status error";
+      setTimeout(() => statusDiv.style.display = 'none', 3000);
+      return;
+    }
+    
+    const text = `🆕 Yangi xabar!\n\n👤 Ism: ${name}\n📞 Telefon: ${phone}\n💬 Xabar: ${message}`;
+    
+    const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+    
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: CHAT_ID, text: text })
+      });
+      
+      const result = await response.json();
+      
+      if (result.ok) {
+        statusDiv.textContent = "✅ Xabaringiz muvaffaqiyatli yuborildi! Tez orada javob beraman.";
+        statusDiv.className = "form-status success";
+        form.reset();
+      } else {
+        throw new Error("Telegram xatosi");
+      }
+    } catch (error) {
+      statusDiv.textContent = "❌ Xatolik yuz berdi. Iltimos, keyinroq urinib ko‘ring.";
+      statusDiv.className = "form-status error";
+    }
+    
+    setTimeout(() => statusDiv.style.display = 'none', 5000);
+  });
+</script>
+
+</body>
+</html>
